@@ -1,0 +1,20 @@
+Front-End RoadMap
+
+HTML
+- view 계층, 이벤트 처리가 불가능하다.
+- 단방향 서비스 (if문, for문 지원이 안된다.) - 정적페이지 <-> 동적페이지 (JSP, Servlet, spring)
+
+Javascript
+- 변수(let, const - 배열, 함수, 객체) -컴파일안함-타입체크-CationgException-에러잡기)
+- 제어문, 객체, 배열, 함수(자바스크립트에서는 함수도 객체이다.)
+- Arrow Function, 구조분해할당, 일급함수, 일급객체
+- 정적페이지에 Dynamic한 영향을 줄 수 있는것이 자바스크립트이다.
+- 자바스크립트는 브라우저가 있어야만 실행되었다.
+- 그런데 Nodejs의 탄생으로 브라우저가 없어도 실행이 가능하게 되었다.
+- 백엔드 영역으로 확장이 가능해졌다.
+- 자바스크립트에서는 함수도 객체취급을 받는다.
+
+Vue.js나 React.js를 하는데 Typescript가 필수는 아니다.
+HTML - CSS - Javascript - ECMAScript - Restful API - Cloud Service(Google firebase, AWS, etc...) - Nodejs - React.js
+
+Final Project - NAVER, KAKAO, KakaoPay, NAVER PAY

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./coordinate.css" />
+  </head>
+  <body>
+    <!-- CSS를 공통으로 붙일수도 있고 나눠서 붙일수도 있다. -->
+    <div class="line horizontal"></div>
+    <div class="line vertical"></div>
+    <img class="target" src="../images/target.png" alt="target" />
+    <span class="loc">좌표값 여기 </span>
+    <script type="text/javascript">
+      /* 변수 선언시에는 var을 쓰지 않는다. let, const(final)
+      document는 window 객체의 자손 객체이다 여기서는 coordinate1.html전체
+      javascript언어로 html문서의 태그를 접근하려면 document 객체가 제공하는 함수 querySelector를 사용해야 한다. */
+      const vertical = document.querySelector(".vertical");
+      const horizontal = document.querySelector(".horizontal");
+      const target = document.querySelector(".target");
+      const loc = document.querySelector(".loc");
+      document.addEventListener("mousemove", (event) => {
+        const x = event.clientX;
+        const y = event.clientY;
+        console.log(`${x} ${y}`);
+
+        vertical.style.left = `${x}px`;
+        horizontal.style.top = `${y}px`;
+        target.style.left = `${x}px`;
+        target.style.top = `${y}px`;
+        loc.style.left = `${x}px`;
+        loc.style.top = `${y}px`;
+        loc.innerHTML = `${x}px ${y}px`;
+      });
+    </script>
+  </body>
+</html>

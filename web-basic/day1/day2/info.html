@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- 선언문 html -->
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- UTF-8 전세계 표준 포맷 -->
+    <!-- explorer 낮은 버전에서 동작이 될 때 최신 explorer로 렌더링 해준다. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- viewport가 있어야 mobile device가 mobile page를 제대로 출력한다.
+    Hybrid Application = Native App + Web App
+    -->
+    <!-- tag 종류에는 두 가지 요소가 있다. 인라인 요소와 블럭 요소가 있다. 요소 = 태그 = 노드 
+    인라인 요소는 자체 크기가 없다. 그래서 오른쪽에 붙는다.
+    블럭 요소는 자체 크기가 있다(가로, 세로 크기가 있다, 그래서 자동 줄바꿈이 된다).-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>윈도우사이즈</title>
+    <style>
+      .tag {
+        display: inline-block; /* 컨텐츠를 감싸준다. */
+        background-color: cyan;
+        font-size: 48px;
+        padding: 16px; /* 상하좌우 16px */
+        margin-top: 16px;
+        margin-bottom: 32px;
+      }
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: magenta;
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tag">윈도우 사이즈</div>
+    <div></div>
+    <div></div>
+
+    <script>
+      window.addEventListener("resize", () => {
+        /* Arrow Function */
+        /* Screen : 모니터의 화면 크기  */
+        console.log(
+          `window.screen:${window.screen.width},${window.screen.height}`
+        );
+        /* URL과 탭(세션 ID를 쿠키에 저장한다.) 전체적인 크기 */
+        console.log(`window.outer:${window.outerWidth},${window.outerHeight}`);
+        /* Web page + Scrollbar */
+        console.log(`window.outer:${window.innerWidth},${window.innerHeight}`);
+        /* 스크롤바가 제외된 문서의 사이즈 */
+        console.log(
+          `doucment(문서):${document.documentElement.clientWidth},${document.documentElement.clientHeight}`
+        );
+      });
+    </script>
+    비교<img src="#" />
+  </body>
+</html>

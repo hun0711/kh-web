@@ -1,0 +1,8 @@
+npm i express
+:Restful API를 지원하는 프레임워크
+
+npm i nodemon --save-dev
+npm install -g nodemon
+:--save-dev 옵션을 붙이면 로컬에서만 사용함
+
+<script src="https://kit.fontawesome.com/c59bdf0cb0.js" crossorigin="anonymous"></script>

@@ -1,0 +1,107 @@
+@charset "UTF-8"
+
+* {
+  margin: 0px; /* 화면 좌측 상단 기준 외부 여백 top 0, right 0, bottom 0, left 0 으로 초기화*/
+  padding: 0px; /* 화면 좌측 상단 기준 내부 여백 top 0, right 0, bottom 0, left 0 으로 초기화*/
+  box-sizing: border-box; /* 여백을 포함하는 사이즈 계산*/
+  /* border: 1px solid red; */
+}
+
+body {
+  /*전체 화면을 블랙으로  */
+  background-color: black;
+}
+
+ul {
+  /* 구슬 없앰 */
+  list-style: none;
+}
+
+a {
+  /* 링크 - 손모양 밑줄 제거 */
+  text-decoration: none;
+}
+
+header {
+  width: 100%; /*반응형 웹*/
+  display: flex; /*inline, block, inline-block, flex - flex일 때만 justify-content(space-between) 메뉴바 구성 시 많이 사용*/
+  border-bottom: 1px solid #aaa; /*바닥에 선그리기 두께 1px 실선 dotted 색상*/
+  justify-content: space-between; /*flex일 때만 해당된다.*/
+  align-items: center; /*중앙에 배치하고싶을 때 사용한다.*/
+  top: 0px; /*꼭지점에서의 y축 좌표*/
+  left: 0px; /*꼭지점에서의 x축 좌표*/
+  color: white; /*글자색*/
+  z-index: 2; /*Layer의 번호*/
+}
+
+header .gnb li {
+  /*header 태그아래 ul class - gnb*/
+  margin: 0px 20px; /*메뉴 이름 오른쪽과 왼쪽에 20px씩 띄운다 --> 40px*/
+}
+
+header .gnb li a {
+  /*앵커 태그 - 최근에 본 상품 링크 기능 - 클릭하면 페이지 이동*/
+  color: white;
+}
+
+.gnb {
+  display: flex; /*ul 태그 아래 li태그는 수직방향으로 배치가 된다. -> 수평방향으로 배치해준다.*/
+  z-index: 2;
+}
+
+.sns {
+  display: flex; /*ul 태그 아래 li태그는 수직방향으로 배치가 된다. -> 수평방향으로 배치해준다.*/
+  z-index: 2;
+}
+
+header .sns li {
+  margin: 0px 10px; /*top과 bottom은 0이고 left와 right는 10이다.*/
+}
+
+header .sns li a {
+  font-size: 30px; /*a 태그안에 내용, 글자 크기 고정 - 이미지 크기가 조정된다.*/
+  color: white;
+}
+
+div {
+  /*비디오 태그 컨텐츠*/
+  width: 100%; /*폭은 가득 채운다.*/
+  height: 100vh; /*v는 뷰 포트를 의미 보이는 화면의 높이값을 나타낸다.*/
+  position: absolute; /*이것을 주어야 좌표값에 따라서 배치된다.*/
+  top: 0px;
+  left: 0px;
+  overflow: hidden; /* 스크롤바 숨김 */
+  z-index: 1; /*레이어의 값 - 이 위에 메뉴 글씨가 2가된다. mp4위에 글씨보임*/
+}
+
+div video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /*영상이 비디오에 꽉 차게 해준다.*/
+}
+
+.txt {
+  position: absolute;
+  left: 6vw;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.txt p {
+  font: normal 6vw/1 "Fredericka the Great";
+  color: white;
+}
+
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  font: 12px/1 "arial"; /*글자크기/로우높이값 글꼴*/
+  text-align: center; /*글자의 위치 - 정중앙배치*/
+  letter-spacing: 2px; /*알파벳과 알파벳 사이의 간격*/
+  padding: 5vh 5vw; /*v는 뷰포트를 의미 보여지는 공간에서의 내부여백 값*/
+  color: white;
+  z-index: 2;
+}

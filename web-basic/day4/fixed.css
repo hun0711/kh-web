@@ -1,0 +1,17 @@
+.container {
+  background-color: yellow;
+}
+
+div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border: 1px solid black;
+}
+
+.box {
+  background-color: aqua;
+  position: fixed;
+  left: 20px;
+  top: 20px;
+}
