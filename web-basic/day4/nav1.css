@@ -1,0 +1,45 @@
+/* 우리가 패딩을 줬을 때 높이와 너비가 그 패딩을 포함 했을 때도 동일한 높이와 너비가 되도록한다. */
+
+* {
+  box-sizing: border-box;
+  background-color: black;
+}
+
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin: 0px;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+ul {
+  list-style: none; /* 구슬 없앰*/
+  padding-left: 0px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+  background-color: aquamarine;
+}
+
+.navbar_menu {
+  display: flex;
+}
+
+.navbar_menu_item {
+  padding: 8px 12px;
+  margin: 0 4px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.navbar_menu_item:hover {
+  background-color: aquamarine;
+}

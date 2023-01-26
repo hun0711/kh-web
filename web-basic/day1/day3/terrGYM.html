@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 절대경로 - 처음부터 끝까지 다 적는다.
+        상대경로 - 권장사항이다. 현재 내 위치를 기준으로 찾는다. -->
+    <link rel="stylesheet" href="./terrGYM.css" />
+    <script
+      src="https://kit.fontawesome.com/c59bdf0cb0.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- 메뉴바 구성(Navbar) -->
+    <header>
+      <h1>TerrGYM</h1>
+      <ul class="gnb">
+        <!-- li*6>a[href='#'] -->
+        <li>
+          <a href="https://www.naver.com/">COMPANY</a>
+        </li>
+        <li>
+          <a href="https://blog.naver.com/nextbirthday">BRAND</a>
+        </li>
+        <li>
+          <a href="https://wit.nts-corp.com/2019/02/14/5522">GALLERY</a>
+        </li>
+        <li>
+          <a href="https://www.coupang.com/">COMMUNITY</a>
+        </li>
+        <li>
+          <a href="#">NEWS</a>
+        </li>
+        <li>
+          <a href="#">LOCATION</a>
+        </li>
+      </ul>
+      <ul class="sns">
+        <!-- li*3>a[href='#']>i -->
+        <li>
+          <a href="#"><i class="fas fa-search"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="far fa-envelope"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fab fa-facebook-square"></i></a>
+        </li>
+      </ul>
+    </header>
+    <hr />
+    <!-- 컨텐츠(figure tag) -->
+    <figure>
+      <div><video src="../videos/car.mp4" autoplay muted loop></video></div>
+      <article class="txt">
+        <p>Back-End/Front-End<br />Development</p>
+      </article>
+      <!-- <video src="../videos/forest.mp4" autoplay muted loop></video> -->
+    </figure>
+    <hr />
+    <!-- 바닥글(footer tag) -->
+    <footer>2023 TerrGYM & copy; ALL RIGHTS RESERVED</footer>
+  </body>
+</html>

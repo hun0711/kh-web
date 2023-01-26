@@ -1,0 +1,22 @@
+html,
+body {
+  height: 100%;
+}
+
+.container {
+  /* vh (view height) - 보이는 높이의 100%를 모두 쓰겠다는 의미  */
+  height: 100%; /* 컨테이너 부모의 100%를 채우겠다. 현재 컨테이너의 부모는 body tag*/
+  background-color: beige;
+  display: flex; /*default: 왼쪽에서 오른쪽으로 정렬*/
+  /* row가 기본 값 -----> // column 위에서 아래로  */
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap; /*default no wrap(no wrap은 안넘어감) @wrap을 하면 넘어감*/
+}
+
+.item {
+  background-color: aquamarine;
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+}

@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  background-color: yellow;
+}
+
+.parent {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border: 2px solid red;
+}
+
+.child {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  right: 0px;
+  bottom: 0px;
+  /* 위치 정보에 따라 바꾸려면 position에 absolute를 주어야 좌표 값에 따른 포지션을 지정해줄 수 있다. */
+}
+/* 
+.grandchild {
+  width: 200px;
+  height: 200px;
+  background-color: chartreuse;
+  top: 0px;
+  left: 0px;
+  position: relative;
+} */
