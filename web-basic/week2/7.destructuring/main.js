@@ -16,9 +16,9 @@ console.log(c);
 console.log(d); /* undefined */
 console.log(e);
 
-const { f = 10 } = object; /* object에 f가 없으니 초기화된 값이 출력 */
+const { f = 10 } = object; /* object에 f가 없으니 14번 초기화된 값이 출력 */
 console.log(f);
 
-const arr = [1, 2, 3, 4, 5];
-const [i, j, ...rest] = arr;
-console.log(...rest);
+const arr = [1,2,3,4,5]
+const [i,j,...rest] = arr
+console

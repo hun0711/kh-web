@@ -32,3 +32,6 @@ const student = {
 for (let key in student) {
 console.log(key, ",", student[key]);
 }
+// for (let key in student) {
+//   console.log(key, ",", student[key]);
+// }
