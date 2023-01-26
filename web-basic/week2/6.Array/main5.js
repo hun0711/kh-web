@@ -37,9 +37,10 @@ console.log(result7);
 
 //slice() : 배열 잘라내기 - 새로운 배열을 만들어서 잘라내기(리액트 CRUD처리시) / 원본은 바뀌지 않는다.
 const result8 = colors.slice(1);
-console.log(result8 + "," + typeof(result8));
+console.log(result8 + "," + typeof result8);
+
 const result9 = colors.slice(1, -1);
 console.log(result9);
 
-const result10 = ['Object Null']
-console.log(result10.slice(5,));
+const result10 = ["Object Null"];
+console.log(result10.slice(5));
