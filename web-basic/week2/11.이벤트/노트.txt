@@ -1,0 +1,13 @@
+이벤트
+:무언가 일어난다, 액션, 요청, request
+
+1.사용자가 발생시키는 이벤트
+:click,mouseover,mousemove,mousewheel,scroll
+2.시스템이 발생시키는 이벤트
+:load,error
+
+이벤트 연결방법
+1.이벤트 핸들러 이용
+DOM요소.onclick = () => {}
+2.내장 함수 이용
+DOM요소.addEventListener('이벤트명',()=>{})

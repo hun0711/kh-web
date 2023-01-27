@@ -6,13 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>디자인 -A안</title>
     <link rel="stylesheet" href="./site.css" />
+    <script
+      src="https://kit.fontawesome.com/8e102053c5.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <header>
       <div class="container">
         <h1>
           <img
-            src="../images/sample/home-solid(1).svg"
+            src="../images/sample/icon-menu.svg"
             width="50px"
             height="50px"
           />
@@ -24,6 +28,18 @@
           <a href="">REACT</a>
           <a href="" class="btn">문의하기</a>
         </nav>
+        <button class="more-btn">
+          <i class="icon"></i>
+        </button>
+        <script>
+          const moreBtn = document.querySelector(".more-btn");
+          const mainNavigation = document.querySelector(".main-navigation");
+          moreBtn.addActionListener("click", () => {
+            alert("11");
+            moreBtn.classList.toggle("active");
+            mainNavigation.classList.toggle("active");
+          });
+        </script>
       </div>
     </header>
     <main class="main-bg">

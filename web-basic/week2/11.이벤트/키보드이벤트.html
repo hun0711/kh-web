@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>키보드이벤트</title>
+  </head>
+  <body>
+    <script>
+      window.addEventListener("keyup", (e) => {
+        //console.log(e.key);
+        if (e.key === "Enter") {
+          console.log("엔터쳤을때");
+        }
+      });
+    </script>
+  </body>
+</html>
+<!-- 
+ keydown : 특정 키를 누르고 있을 때
+ keyup : 특정 키를 누르다 손을 떼면
+ keypress : 키를 누르고 있을 때
+
+ -->
