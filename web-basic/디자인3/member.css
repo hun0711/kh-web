@@ -1,0 +1,29 @@
+* {
+  margin: 0; /* 1: 4면에 대한 외부여백은 0 */
+  padding: 0; /* 2: 4면에 대한 내부여백은 0*/
+  box-sizing: border-box; /* 3: 여백을 포함한 크기계산 */
+  border: 1px solid red; /* 4:여백부분,스타일을 죽인부분 */
+}
+
+ul {
+  list-style: none; /* 5:구슬제거 */
+}
+
+a {
+  text-decoration: none; /* 6:텍스트 밑줄 제거 */
+}
+
+body {
+  background-color: seashell; /* 7:전체문서 배경색 */
+}
+/* section태그로 전체를 감쌈 */
+
+.wrap {
+  width: 340px; /* 8:가로크기 */
+  padding: 30px; /* 9:내부여백크기 */
+  background-color: white; /* 10:배경색상 */
+  position: absolute; /* 11:좌표값에 따른 배치 */
+  top: 50%; /* 12:y축 중앙배치 - 주의 요소의 왼쪽 상단 모서리위치*/
+  left:50%; /* 13:x축 중앙배치 */
+  transform: translate(-50%,-50%); /* 14:요소의 중앙 위치를 잡음 */
+}

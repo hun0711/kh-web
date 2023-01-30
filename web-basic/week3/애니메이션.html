@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>애니메이션</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        margin: 20px;
+      }
+      /* 
+      linear
+      easy-in
+      easy-in-out
+      */
+      .box1:hover {
+        background-color: gray;
+        transition-duration: 1s;
+        transition-timing-function: linear;
+      }
+      .box2:hover {
+        background-color: chocolate;
+        border-radius: 50%;
+        transition: all 1s ease;
+      }
+      .box3:hover {
+        background-color: salmon;
+        border-radius: 30%;
+        transform: translateX(400px);
+        transition: 2s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+  </body>
+</html>

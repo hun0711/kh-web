@@ -1,0 +1,171 @@
+* {
+  box-sizing: border-box; /* 1:패딩과 마진 포함 사이즈계산 */
+  /*border: 1px solid mediumaquamarine;  옵션: 마진과 패딩 공간,영역,블록 */
+}
+
+body {
+  margin: 0; /* 2:빈 공간 없이 왼쪽 상단 모서리 붙임 */
+}
+
+a {
+  text-decoration: none; /* 3:a태그 링크로 밑줄 없앰 */
+}
+
+ul {
+  list-style: none; /* 4:구슬 없앰 */
+  padding-left: 0; /* 5:구슬 공간 없앰 */
+}
+
+#navbar {
+  position: fixed;
+  /* id접근시 #을 붙임 */
+  display: flex; /* 6:skill inventory랑 ul을 좌우로 펼침 */
+  width: 100%; /* 7:생략-반응형웹,버거아이콘 */
+  height: 60px; /* 8:높이 */
+  justify-content: space-between;
+  background-color: mediumaquamarine;
+}
+
+.navbar-logo {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.navbar-menu {
+  display: flex; /* ul안에 li를 좌우로 펼침 */
+}
+
+/* 메뉴 아이템 추가 */
+.navbar-menu-item {
+  padding: 8px 12px;
+  margin: 0 4px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Home버튼 강조 */
+.navbar-menu-item.active {
+  border: 3px solid white;
+}
+
+.navbar-menu-item:hover {
+  background-color: coral;
+  color: black;
+}
+
+/* 버거 아이템추가 */
+.burger-toggle-btn {
+  position: absolute;
+  right: 32px;
+  font-size: 24px;
+  display: none;
+}
+
+/* 섹션공통 */
+.section {
+  text-align: center;
+  margin: auto;
+}
+
+.hcontent {
+  background-color: rgb(0, 0, 0);
+  background-image: url(../../images/sample/camping-night2.jpg);
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 500px;
+}
+
+.mcontent {
+  background-color: white;
+  width: 100%;
+  height: 500px;
+}
+.scontent {
+  background-color: rgb(89, 92, 255);
+  width: 100%;
+  height: 500px;
+}
+.pcontent {
+  background-color: rgb(255, 1, 251);
+  width: 100%;
+  height: 500px;
+}
+
+/* 블록요소 안에 블록요소 사용시 벌어짐발생*/
+/* 부모자식관계로 묶어줌 */
+#contact {
+  position: relative; /* 부모 */
+}
+
+.ccontent {
+  position: absolute; /* 자식 */
+  background-color: rgb(220, 14, 14);
+  width: 100%;
+  height: 200px;
+}
+
+.contact-email,
+.contact-rights {
+  color: white;
+}
+
+.contact-links {
+  font-size: 48px;
+  transition: all 300ms ease-in;
+}
+
+.contact-links i:hover {
+  transform: scale(1.1);
+  color: white;
+}
+
+.up {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 70px;
+  height: 70px;
+  font-size: 25px;
+  border-radius: 50%;
+  background-color: aliceblue;
+  opacity: 0;
+  transition: all 300ms ease-in;
+}
+
+.up.visible {
+  opacity: 1;
+}
+
+/* 반응형 웹추가 - 768px보다 작아지면 발동 */
+@media screen and (max-width: 768px) {
+  .burger-toggle-btn {
+    display: block; /* 1:버거아이콘 보임 */
+  }
+
+  #navbar {
+    /* 메뉴바의 내용이 아래로 출력 */
+    flex-direction: column; /* 3:메뉴바내용 아래로 */
+    /* 메뉴가 앞쪽으로 배치 */
+    align-items: flex-start; /* 4 */
+  }
+
+  /* relative는 아무 효과없음. 부모자식관계로 요소 붙일 때, 2번째 레이어 구성할 때 / z-index가 적용됨*/
+  .div-menu {
+    /* 디자이너가 원하는 위치(top[y축],bottom,left[x축],right)에 배치하려면 반드시 absolute로 함 */
+    position: absolute;
+    top: 50px; /* position absolute가 없으면 효과없음 */
+    width: 100%; /* 2:메뉴아이템이 전체채움 */
+  }
+
+  .navbar-menu {
+    flex-direction: column; /* 5:메뉴가 아래방향 */
+    display: none; /* 6-1 반응형 테스트시에만 block으로 두어 확인할 것.*/
+    text-align: center; /* 7:글씨 가운데 정렬 */
+  }
+
+  /* 버거아이콘을 누르면 css 추가함 - open */
+  /* 노드주소번지.classList.toggle(open) */
+  .navbar-menu.open {
+    display: block; /* 6 */
+  }
+}

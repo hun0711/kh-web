@@ -4,21 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>디자인 -A안</title>
-    <link rel="stylesheet" href="./site.css" />
+    <title>디자인 - A안</title>
+    <link rel="stylesheet" href="./index.css" />
     <script
-      src="https://kit.fontawesome.com/8e102053c5.js"
+      src="https://kit.fontawesome.com/3b3af91d34.js"
       crossorigin="anonymous"
     ></script>
   </head>
   <body>
+    <!-- 소개 및 탐색에 도움을 주는 콘텐츠를 나타냅니다 -->
     <header>
       <div class="container">
         <h1>
           <img
-            src="../images/sample/icon-menu.svg"
+            src="../images/home-solid.svg"
             width="50px"
             height="50px"
+            alt=""
           />
         </h1>
         <nav class="main-navigation">
@@ -34,16 +36,19 @@
         <script>
           const moreBtn = document.querySelector(".more-btn");
           const mainNavigation = document.querySelector(".main-navigation");
-          moreBtn.addActionListener("click", () => {
+
+          moreBtn.addEventListener("click", () => {
+            alert("11");
             moreBtn.classList.toggle("active");
             mainNavigation.classList.toggle("active");
           });
         </script>
       </div>
     </header>
+    <!-- 문서 <body>의 주요 콘텐츠를 나타냄 -->
     <main class="main-bg">
       <div class="video-wrap">
-        <video src="../../images/sample/forest.mp4" muted autoplay loop></video>
+        <video src="../images/forest.mp4" muted autoplay loop></video>
       </div>
       <div class="container">
         <div class="text-wrap">

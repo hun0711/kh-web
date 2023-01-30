@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/c59bdf0cb0.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./step2.css" />
+  </head>
+  <body>
+    <!-- Navbar start -->
+    <nav id="navbar">
+      <!-- LOGO -->
+      <div class="navbar-logo">
+        <i class="fab fa-diaspora"></i>
+        <a href="#">SKILL INVENTORY</a>
+      </div>
+      <!-- 메뉴 아이템 -->
+      <div class="div-menu">
+        <ul class="navbar-menu">
+          <!-- #HOME 해시값설정 -> 라우팅서비스[페이지이동처리,화면이동,멀티화면처리...] API  -->
+          <li class="navbar-menu-item active" data-link="#home">HOME</li>
+          <li class="navbar-menu-item" data-link="#me">ABOUT ME</li>
+          <li class="navbar-menu-item" data-link="#skill">SKILLS</li>
+          <li class="navbar-menu-item" data-link="#project">PROJECTS</li>
+          <li class="navbar-menu-item" data-link="#contact">CONTACT</li>
+        </ul>
+      </div>
+      <!-- 버거 아이콘 -->
+      <div class="burger-toggle-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+      <script>
+        const navbarMenu =
+          document.querySelector(
+            ".navbar-menu"
+          ); /* 캡쳐링때문에 ul태그에 이벤트처리를 하여도 하위에 있는 이벤트태그에 적용됨 */
+        navbarMenu.addEventListener("click", (event) => {
+          // <li class="navbar-menu-item" data-link="#me">ABOUT ME</li>
+          console.log(event.target); //감지되는 이벤트 타겟 객체 출력
+          // data-link="#me"
+          console.log(event.target.dataset.link); // #home or #about를 찍어줌
+          const target = event.target;
+          const link = target.dataset.link; //#home,#me,#skill,#project,#contact
+          if (link == null) {
+            return;
+          }
+          scrollIntoView(link);
+        });
+        function scrollIntoView(selector) {
+          //home me skill project contact
+          console.log(selector);
+          const scrollTo = document.querySelector(selector);
+          scrollTo.scrollIntoView({ behavior: "smooth" });
+        }
+        const buggerIcon = document.querySelector(".burger-toggle-btn");
+        buggerIcon.addEventListener("click", () => {
+          navbarMenu.classList.toggle("open");
+        });
+      </script>
+      <!-- 버거 아이콘 -->
+    </nav>
+
+    <!-- Navbar end -->
+    <!-- HOME start -->
+    <section id="home" class="section">
+      <!-- section id는 해시(hash)값과 동일해야함 -->
+      <!-- 메뉴 클릭시 data link값으로 사용 -->
+      <div class="hcontent">사진</div>
+    </section>
+
+    <!-- HOME end -->
+    <!-- ME start -->
+    <section id="me" class="section">
+      <div class="mcontent">ABOUT ME</div>
+    </section>
+    <!-- ME end -->
+    <!-- SKILLS start -->
+    <section id="skill" class="section">
+      <div class="scontent">SKILLS</div>
+    </section>
+    <!-- SKILLS end -->
+    <!-- PROJECT start -->
+    <section id="project" class="section">
+      <div class="pcontent">PROJECTS</div>
+    </section>
+    <!-- PROJECT end -->
+    <!-- CONTACT start -->
+    <section id="contact" class="section">
+      <div class="ccontent">
+        <h2 class="contact-email">CONTACT</h2>
+        <div class="contact-links">
+          <a href="#" target="..blank"><i class="fab fa-github"></i></a>
+          <a href="#" target="..blank"><i class="fa fa-linkedin-square"></i></a>
+          <!-- blank를 주면 새 화면에 띄움 -->
+        </div>
+        <p class="contact-rights">2023 김성훈 - ALL rights reserved</p>
+      </div>
+    </section>
+    <!-- CONTACT end -->
+    <button class="up"><i class="fas fa-arrow-up"></i></button>
+    <script>
+      // 문서가 수직으로 얼마나 스크롤됐는지 픽셀 단위로 반환
+      const home = document.querySelector(".hcontent");
+      document.addEventListener("scroll", () => {
+        //console.log(window.scrollY);
+      });
+      //실제 home content의 높이
+      const homeHeight = home.getBoundingClientRect().height;
+      document.addEventListener("scroll", () => {
+        //만약 홈높이가 600이면 스크롤링이 0에서 300까지 오면
+        //0.5만큼 투명하게 되고 600이면 투명도가 0이 되고 시작할 때는
+        //투명하면 안되니까 1로 줌
+        home.style.opacity = 1 - window.screenY / homeHeight;
+      });
+      const upBtn = document.querySelector(".up");
+      document.addEventListener("scroll", () => {
+        //홈컨텐트의 절반 보다 큰 값이면
+        if (window.scrollY > homeHeight / 2) {
+          upBtn.classList.add("visible");
+        } else {
+          //스크롤이 위에 있는 경우 보여지면 안되니까 스타일 없앰
+          upBtn.classList.remove("visible");
+        }
+      });
+      //업버튼 클릭 시 home섹션으로 이동함
+      upBtn.addEventListener("click", () => {
+        scrollIntoView("#home");
+      });
+    </script>
+  </body>
+</html>
