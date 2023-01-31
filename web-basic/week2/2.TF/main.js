@@ -16,6 +16,7 @@ if ("0") {
 }
 
 if (NaN) {
+  
 } else {
   console.log("NaN도 false");
 }

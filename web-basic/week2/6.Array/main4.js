@@ -15,6 +15,7 @@ colors.forEach(function (color) {
   console.log(`${copy}`);
 });
 
+
 ["red", "green", "blue"].forEach((color) => {
   copy.push(color);
 });

@@ -9,7 +9,7 @@ function func2() {
 }
 
 const func3 = function () {
-  console.log("func3호출");
+  console.log("fun3호출");
 };
 
 func3(); //함수 표현식에서는 호이스팅 안 일어남

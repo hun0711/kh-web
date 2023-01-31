@@ -17,6 +17,7 @@ setTimeout(function () {
   console.log(age);
 }, 2000); // millisecond단위
 
+
 /*
  자료형(Data Type)
  자료형의 종류

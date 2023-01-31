@@ -7,6 +7,7 @@ fruits3.forEach((fruit, index) =>{
 	console.log(`${index} - ${fruit}`);
 })
 console.log('-------fruits3 END---------');
+
 const fruits4 = [...fruits, ...fruits2]
 
 fruits4.forEach(function(fruit, index){
