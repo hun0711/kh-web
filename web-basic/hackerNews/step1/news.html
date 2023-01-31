@@ -5,6 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>해커뉴스API</title>
+    <!-- 
+      선언부에서 자바스크립트를 import하면 html은 순차적으로 읽기가 진행되므로
+      12번에서 div태그가 존재한다는 사실을 알 수가 없다.
+      그러면 undefined가 발생함
+      해결방법은 script속성으로 defer를 추가한다
+      브라우저가 news.html을 서버로부터 다운로드 하고 document을 스캔해서
+      DOM tree를 그릴 때(태그정보를 모두 다 읽을 때 - undefined안일어남)까지 기다림
+      보통 전변선언이나 함수선언은 head태그 안에서 작성함
+    -->
     <script defer src="./news.js"></script>
   </head>
   <body>

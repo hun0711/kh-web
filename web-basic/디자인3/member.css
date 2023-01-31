@@ -2,11 +2,16 @@
   margin: 0; /* 1: 4면에 대한 외부여백은 0 */
   padding: 0; /* 2: 4면에 대한 내부여백은 0*/
   box-sizing: border-box; /* 3: 여백을 포함한 크기계산 */
-  border: 1px solid red; /* 4:여백부분,스타일을 죽인부분 */
+  /* border: 1px solid red; 4:여백부분,스타일을 죽인부분 */
 }
 
 ul {
   list-style: none; /* 5:구슬제거 */
+  font-size: 20px;
+}
+
+nav {
+  font-size: 20px;
 }
 
 a {
@@ -14,16 +19,131 @@ a {
 }
 
 body {
-  background-color: seashell; /* 7:전체문서 배경색 */
+  background-color: cornsilk; /* 7:전체문서 배경색 */
 }
 /* section태그로 전체를 감쌈 */
 
 .wrap {
-  width: 340px; /* 8:가로크기 */
+  width: 500px; /* 8:가로크기 */
   padding: 30px; /* 9:내부여백크기 */
   background-color: white; /* 10:배경색상 */
   position: absolute; /* 11:좌표값에 따른 배치 */
   top: 50%; /* 12:y축 중앙배치 - 주의 요소의 왼쪽 상단 모서리위치*/
-  left:50%; /* 13:x축 중앙배치 */
-  transform: translate(-50%,-50%); /* 14:요소의 중앙 위치를 잡음 */
+  left: 50%; /* 13:x축 중앙배치 */
+  transform: translate(-50%, -50%); /* 14:요소의 중앙 위치를 잡음 */
+}
+
+.wrap .menu a {
+  font-size: 20px;
+  color: gray;
+}
+
+/*
+float 속성을 주면 부모가 감싸주던 값이 0으로 되어
+아이콘을 감싸주지 못함 가상선택자를 선언하여 문제해결 
+ */
+
+.wrap .menu::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.wrap .menu a:nth-of-type(1) {
+  float: left;
+}
+.wrap .menu a:nth-of-type(2) {
+  float: right;
+}
+
+.wrap .profile {
+  width: 100%;
+  text-align: center;
+}
+
+.wrap .profile img {
+  width: 300px;
+  height: auto;
+  border-radius: 10%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.wrap .profile h1 {
+  font: bold 25px/1 "arial";
+  color: rgb(0, 0, 0);
+  margin-bottom: 5px;
+}
+.wrap .profile p {
+  font: bold 18px/1 "arial";
+  color: rgb(0, 0, 0);
+  margin-bottom: 3px;
+}
+
+/* a태그 css활용하여 버튼으로 바꿔보기 */
+.wrap .profile .detailBtn {
+  display: block;
+  width: 150px;
+  height: 30px;
+  /* 시계방향 auto : 양 옆 */
+  margin: 10px auto 10px;
+  font: bold 18px/30px "arial";
+  background-color: coral;
+  color: white;
+  text-shadow: 2px 2px 3px rgba(rgb(255, 255, 255), green, blue, alpha);
+  border-radius: 15px;
+}
+
+/* 인라인 요소는 기본적으로 가운데 정렬이 되고
+만일 block요소를 주면 기본적으로 왼쪽 정렬이 됨
+이것을 가운데 오게 할 때 margin에 auto를 줌 */
+
+.wrap .contact {
+  margin-bottom: 20px;
+}
+
+.wrap .contact li {
+  width: 100%;
+  padding: 10px 0px;
+  border-bottom: 1px solid orange;
+}
+
+.wrap .contact li i {
+  width: 20%;
+  text-align: center;
+  color: tomato;
+}
+
+.wrap .contact li span {
+  font: 18px/1 "orbitron";
+  color: rgb(39, 37, 37);
+  letter-spacing: 1px; /* 글자간 간격 */
+}
+/* a(anchor) 인라인요소 - 크기가 없다 */
+.wrap .others {
+  text-align: center;
+  font-size: 0;
+}
+.wrap .others a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: khaki;
+  border-radius: 50%;
+  margin: 0px 10px;
+}
+
+.wrap .others a:nth-of-type(1) {
+  background-color: orangered;
+}
+
+.wrap .others a:nth-of-type(2) {
+  background-color: salmon;
+}
+
+.wrap .others a:nth-of-type(3) {
+  background-color: mediumaquamarine;
+}
+
+.wrap .others a:nth-of-type(4) {
+  background-color: greenyellow;
 }
