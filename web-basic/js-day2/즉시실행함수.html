@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>즉시실행함수</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      (function (x) {
+        //실행부 - 변수 선언(var -> parcel 설정 -> let, const)
+        //제어문, 로직
+        //document는 즉시실행함수.html문서 전체를 받는 내장객체
+        //내장객체란 브라우저 안에 정의되어 있어서
+        //필요시 생성없이 브라우저로부터 객체 주입이 됨
+        // const MyCar = new Sonata()
+        document.write("test" + x);
+      })(50000);
+    </script>
+  </body>
+</html>
+
+<!-- 
+  4번 함수
+  :호이스팅 이슈 해결하는 방법
+  :특정 원치않는 공간으로 그 값이 빠져나가지 못하게 할 때
+  :즉시실행함수 안쪽의 값들을 캡슐화할 때 사용
+
+  괄호 2개다
+  -첫째 함수의 정의 부분
+  -두번째 함수 호출하는 괄호
+-->

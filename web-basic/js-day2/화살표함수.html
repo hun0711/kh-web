@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>화살표함수</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      //1번함수
+      function hap(a1, a2) {
+        //a1 = 1,a2 = 2 -> call by value(호출과 동시에 초기화)
+        const result = a1;
+        return result;
+      }
+
+      //3번함수 - 일급함수
+      const hap1 = function (a1, a2) {
+        const result = a1 + a2;
+        return result;
+      };
+
+      //화살표함수
+      const hap2 = (a1, a2) => {
+        const result = a1 + a2;
+        return result;
+      };
+      const hap3 = (a1) => {
+        const result = a1;
+        return result;
+      }; //인자가 하나일땐 괄호 생략 가능
+
+      // INSERT HERE 화면에 출력해보자
+      document.write(hap(1));
+      document.write("<br/>");
+      document.write(hap1(1, 2));
+      document.write("<br/>");
+      document.write(hap2(2, 3));
+      document.write("<br/>");
+      document.write(hap3(7));
+
+      /* hap(); //undefined - 지변
+      hap(1, 2);
+      hap(3); */
+      // *자바와는 다르게 메소드 오버로딩 안됨!!
+    </script>
+  </body>
+</html>
+
+<!-- 
+  - Arrow Function?
+  : 기존의 익명함수를 좀 더 쓰기 쉽게 축약한 형태임
+  : 내부로 전달되는 파라미터가 하나면 괄호는 생략 가능함
+
+  자바스크립트는 같은 이름의 함수를 중복정의 X -> 자바와의 차이
+  why? 메소드 오버로딩이 없기 때문!
+  결론 : 함수의 이름은 무조건 다르게 작명함.
+-->

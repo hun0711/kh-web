@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>고차함수 - 반환형으로 함수가능</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // 일급함수 - 3번
+      function sayHello() {
+        return function () {
+          //고차함수
+          console.log("Hello~");
+        };
+      }
+      const myFunc = sayHello();
+      myFunc();
+    </script>
+  </body>
+</html>
+
+<!-- 
+  함수를 반환하는 함수를 고차 함수라고 부릅니다.
+  - 리액트 리덕스 컨셉을 재현할 때 필요
+  - 구독발행 모델 구현해 볼 때
+  - 커리함수
+ -->

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>전개연산자</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      let hobby = ["게임", "헬스", "독서"];
+      let hobby2 = ["코딩", "스노우보드", "댄스"];
+      let merge = [...hobby, ...hobby2];
+      merge.forEach((item) => {
+        document.write(item + "<br/>");
+      });
+      merge.forEach((a, index) => {
+        document.write(
+          `<font size="26"><b>${index}<b/>${a} <br/>`
+        );
+      });
+    </script>
+  </body>
+</html>

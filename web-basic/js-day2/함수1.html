@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>함수</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      hap();
+      function hap() {
+        //1번 함수
+        console.log("선언적 함수");
+      }
+      const minus = function (a, b) {
+        //3번 함수 - 일급함수
+        const num1 = 2;
+        const num2 = 1;
+        document.write(num1 + num2);
+        document.write("<br/>");
+        document.write(a + b);
+      };
+      minus(5, 8);
+
+      function sayHello() {
+        return "Hello, ";
+      }
+
+      function greeting(helloMessage, name) {
+        console.log(helloMessage() + name);
+      }
+
+      // `sayHello`를 `greeting` 함수에 인자로 전달
+      greeting(sayHello, "JavaScript!");
+    </script>
+  </body>
+</html>
+
+<!-- 
+  함수
+  - 자주 쓰는 실행코드를 블록단위로 묶어놓은것
+  - 기능단위로 재사용하기 위해서...
+  - 선언하기는 function키워드 사용하거나 arrow function
+  - 호출 : 정의되어있는 함수는 호출해야 비로소 기능이 실행됨
+
+  함수의 종류
+  1.선언적 함수 : 이름을 붙여서 정의한 함수
+  - 자바스크립트를 읽을 때 우선적으로 읽어줌
+  - 호출 위치가 자유롭다
+
+  2.익명 함수 : 이름없이 정의한 함수 - 콜백함수 - 중요 - Event
+  - 자체로 호출 불가
+  - 변수에 익명함수를 대입하거나 특정 이벤트 객체에 대입해서 호출
+
+  3.대입형 함수 : 변수에 익명함수가 대입된 형태 - 일급함수랑 고차함수
+
+  4.즉시실행함수 : 함수가 자기자신을 정의하자마자 바로 자신 호출함
+ -->

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>익명함수</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      //text/javascript -> module -> 구글 개발자 센터 -> RealtimeServer
+      const words = [
+        "spray",
+        "limit",
+        "elite",
+        "exuberant",
+        "destruction",
+        "present",
+      ];
+      const result = words.filter((word, index) => word.length > 6);
+      console.log(result);
+      document.write(typeof result); //object
+      document.write("<br/>");
+      document.write(result[0]);
+      document.write("<br/>");
+      document.write(result[1]);
+      document.write("<br/>");
+      document.write(result[2]);
+      //배열의 구조분해 할당([]) - 리액트 필수 문법 - 모듈화 처리
+      const [r1, r2, r3] = result;
+      document.write("<hr>");
+      document.write(r1 + "," + r2 + "," + r3);
+
+      let student = {
+        name: "김성훈",
+        age: 24,
+        address: "서울시 강남구 도곡동",
+      };
+      //객체의 구조분해 할당 - 좌중괄호,우중괄호
+      document.write("<hr>");
+      const { name, age, address } = student;
+      document.write(`${name}, ${age}, ${address}`);
+    </script>
+  </body>
+</html>
