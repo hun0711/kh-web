@@ -1,0 +1,17 @@
+#title {
+  width: 400px;
+}
+
+#content {
+  width: 400px;
+  height: 250px;
+}
+
+input[name="content"]::placeholder {
+  position: absolute;
+}
+
+button {
+  margin: auto;
+  display: block;
+}

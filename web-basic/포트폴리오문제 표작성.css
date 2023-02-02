@@ -1,0 +1,14 @@
+th {
+  background-color: coral;
+  color: white;
+}
+td {
+  font-size: large;
+  width: 100px;
+  background-color: ivory;
+  color: black;
+}
+
+button {
+  padding: 10px 21px;
+}
