@@ -17,14 +17,15 @@
       for (let i = 0; i < fruits.length; i++) {
         document.write(fruits[i]);
       }
-      fruits.forEach(element => console.log(element));
+      fruits.forEach((element) => console.log(element));
       fruits.forEach((element, index) => console.log(index, element));
       fruits.forEach((element, index, fruits) =>
-        console.log(index,element, fruits)
+        console.log(index, element, fruits)
       );
-      fruits.forEach((element, index, fruits) =>{
-        document.write(index,element, fruits)}
-      );
+      document.write("<br/>");
+      fruits.forEach((element, index, fruits) => {
+        document.write(index, element, fruits);
+      });
       //forEach 처리 - 리액트 비중
     </script>
   </body>
