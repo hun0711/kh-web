@@ -1,0 +1,7 @@
+1.익명함수 대해서...
+2.익명함수의 대표적인 예가 이벤트 처리
+
+syntax
+li.addEventListener('click',function(event){
+  
+})

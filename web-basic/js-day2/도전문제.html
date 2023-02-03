@@ -23,7 +23,7 @@
       let items_copy = [...items, { id: 5, name: "레그프레스", count: 20 }];
       document.write("<div>");
       document.write("<table border='1' borderColor='red'>");
-		document.write("<thead>2번문제:</thead");
+      document.write("<thead>2번문제:</thead");
       items_copy.forEach((item) => {
         document.write("<tr>");
         document.write(`<td>${item.id}</td>`);
@@ -43,7 +43,7 @@
       let newItems = items.filter((row) => row.id !== parseInt(result));
       document.write("<div>");
       document.write("<table border='1' borderColor='red'>");
-		document.write("<thead>3번문제:</thead");
+      document.write("<thead>3번문제:</thead");
       newItems.forEach((item) => {
         document.write("<tr>");
         document.write(`<td>${item.id}</td>`);
@@ -54,15 +54,18 @@
       document.write("</table>");
       document.write("</div>");
       //수정하기 - 추가하기 동일하게 처리 - 4번(삭제하고 추가하기)
-	  let x = [...items]
+      let x = [...items];
       result = window.prompt("수정하고자 하는 id를 입력하세요.");
       x.forEach((item) => {
-		if(item.id === parseInt(result)){
-			x = items.filter(item => item.id !== parseInt(result))
-			x = [...x, {id:`${parseInt(result)}` , name: "덤벨프레스", count: 15}]
-		}
-	})
-	document.write("<div>");
+        if (item.id === parseInt(result)) {
+          x = items.filter((item) => item.id !== parseInt(result));
+          x = [
+            ...x,
+            { id: `${parseInt(result)}`, name: "덤벨프레스", count: 15 },
+          ];
+        }
+      });
+      document.write("<div>");
       document.write("<table border='1' borderColor='green'>");
       document.write("<thead>4번문제:</thead");
       x.forEach((item) => {
