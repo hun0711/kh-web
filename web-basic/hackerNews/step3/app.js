@@ -2,8 +2,9 @@ const xhr = new XMLHttpRequest();
 const NEWS = "https://api.hnpwa.com/v0/news/1.json";
 xhr.open("GET", NEWS, false);
 xhr.send();
-
-const news = JSON.parse(xhr.responseText);
+console.log(xhr.responseText);
+const news = JSON.parse(xhr.responseText); //JSON.parse : 문자열을 객체로 변환
+console.log("JSON.parse 적용 후 -----------------------");
 console.log(news);
 console.log(news[0].comments_count);
 //let element = document.createElement(tagName[, options]);
