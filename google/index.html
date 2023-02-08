@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>터짐</title>
+  </head>
+  <body>
+    <script>
+      //window의 onload 이벤트는 브라우저가 DOM구성이 완료(준비,읽었을 때 - defer)되었을 때
+      window.onload = function () {
+        //firebaseJSTest1.html에서 로그인 성공하면 index.html페이지로 이동처리함
+        //이 때 쿼리스트링에 snapshot안에 user에 uid,displayName,email 등등 있음
+        //여기서 displayName만 꺼내서 전달 받음
+        //location 객체는 window의 자손 객체로 URL에 관한 모든 정보를 관리하는 API임
+        //그래서 firebaseJSTest1.html에서 넘겨받는 정보를 알 수 있음 - 매번 달라지니까
+        const queryString = new URLSearchParams(window.location.search);
+        //URLSearchParams 객체 생성후 이 API가 제공하는 get함수의 파라미터로
+        // 쿼리스트링의 키값을 넘김 - 대소문자 주의할것...undefined로 false가 되니까
+        //페이지 흐름에 영향을 주는 인자값임
+        const displayName = queryString.get("displayName");
+        console.log(displayName);
+      };
+    </script>
+    <h2>터짐메인페이지</h2>
+    <!-- button 태그 사용시에는 submit 이슈가 있어서
+    반드시 event.preventDefault() 호출할 것 -->
+    <button id="btnLogout">로그아웃</button>
+    <script type="module">
+      import { firebaseApp } from "../service/firebase.js";
+      import AuthLogic from "../service/authLogic.js";
+      const authLogic = new AuthLogic();
+      const btnLogout = document.querySelector("#btnLogout");
+      btnLogout.addEventListener("click", (event) => {
+        event.preventDefault();
+        authLogic.logout();
+        window.location.href = "./firebaseJSTest1.html";
+      });
+    </script>
+  </body>
+</html>

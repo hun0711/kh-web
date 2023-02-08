@@ -24,8 +24,36 @@
         //console.log(e.target + e.currentTarget);
         authLogic.login("Google").then((snapshot) => {
           console.log(snapshot);
+          //구글 서버에서 응답으로 받은 정보를 문자열로 변환함
+          const temp = JSON.stringify(snapshot);
+          //위에서 변환된 정보를 배열로 변환
+          const jsonDoc = JSON.parse(temp);
+          //uid - 구글에서 할당되는 아이디값 - 이게 바뀌면 다른 사람임
+          //displayName - 구글 계정 이름
+          //email - 구글 계정 이메일
+          console.log(jsonDoc.user.displayName);
         });
+      }); //end of btnGoogle
+      const moveMain = (displayName) => {
+        console.log("moveMain" + displayName);
+        window.location.href = "./index.html?displayName=" + displayName;
+      };
+      //구글 서버에서 상태값의 변화를 체크하고 자동으로 호출해줌
+      //개발자가 호출하는 함수가 아님.
+      //파라미터 user가 바뀌면 자동으로 호출된다는 것임
+      authLogic.onAuthChange((user) => {
+        //아래 구문 분석 필수 (리액트에서 빈번히 쓰인다)
+        user && moveMain(user.displayName);
+        //user.displayName && document.write('<a href="javascript:signOut();">로그아웃</a>');
       });
+      function signOut() {
+        console.log("로그아웃");
+        //import문 사용시 주의할 것은 반드시 type=module 추가할것
+        //text/javascript와 module사이에는 호환이 안됨 - 고려한 코딩 전개할것
+        //그럴경우 유일한 해결방법은 직접 함수 호출이 안되고 
+        //태그의 아이디를 사용하여 addEventListener로 함수처리할 것.
+        authLogic.logout();
+      }
     </script>
     <button id="btnGoogle">구글로그인</button>
   </body>
