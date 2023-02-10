@@ -45,9 +45,8 @@ const search = (user) => {
 
   const videoList2 = [];
   const key = "AIzaSyAf2833_HqoWOxEqydCY7aeWwQS6Bgo2Zc";
-  //const searchURL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=손흥민&key=AIzaSyAf2833_HqoWOxEqydCY7aeWwQS6Bgo2Zc`;
-  const searchURL =
-    "http://192.168.10.47:5500/google/youtube/step4/sample.json";
+  const searchURL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${user}&key=AIzaSyAf2833_HqoWOxEqydCY7aeWwQS6Bgo2Zc`;
+  //const searchURL = "http://192.168.10.47:5500/google/youtube/step4/sample.json";
 
   ajax.open("GET", searchURL, false);
   ajax.send();
