@@ -17,6 +17,7 @@ const handleSearch = () => {
 const search = (user) => {
   console.log("사용자가 입력한 bts 받음 :" + user);
   const ajax = new XMLHttpRequest();
+  
   const videoList2 = [];
   const key = "AIzaSyAf2833_HqoWOxEqydCY7aeWwQS6Bgo2Zc";
   const searchURL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${user}&key=${key}`;
