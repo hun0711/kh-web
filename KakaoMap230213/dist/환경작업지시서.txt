@@ -1,0 +1,16 @@
+1. npm init --y 엔터
+-> package.json 생성됨
+
+2.index.js파일 추가한 뒤 console.log('123')
+
+3.package.json에 아래 내용 수정함
+  "scripts": {
+    "dev":"parcel ./index.html",
+    "build":"parcel build ./index.html"
+  },
+
+4.실행시에는 npm run dev 엔터 한다
+
+5.콘솔창에 http://localhost:1234 ctrl+클릭한다
+
+6.해당 파일이 열림

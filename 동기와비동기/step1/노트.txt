@@ -1,0 +1,5 @@
+동기 - synchronous
+: 코드를 순차적으로 실행
+
+비동기 - asynchronous
+: 코드를 비순차적으로 실행

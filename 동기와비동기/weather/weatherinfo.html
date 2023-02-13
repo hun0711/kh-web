@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>날씨조회</title>
+  </head>
+  <body>
+    <h2 class="icon"></h2>
+    <h3 id="cTime">현재시간 =></h3>
+    <h3 id="temp">기온 =></h3>
+    <h3 id="maxTemp">최고 온도 =></h3>
+    <h3 id="minTemp">최저 온도 =></h3>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $.getJSON(
+        "https://api.openweathermap.org/data/2.5/weather?appid=fde4562329f9ff564a32662ca0fc28f5&q=manchester&units=metric",
+        (result) => {
+          console.log(result);
+          console.log(result.dt);
+          console.log(result.main);
+          console.log(result.weather);
+          console.log(result.weather[0].icon);
+          const timeFormat = (t) => {
+            const cdate = new Date(t * 1000);
+            const hour = cdate.getHours();
+            const min = cdate.getMinutes();
+            const sec = cdate.getSeconds();
+            return `${hour}:${min}:${sec}`;
+          };
+          const dt = result.dt;
+          const test = timeFormat(dt);
+          console.log(test);
+          $("#cTime").append(test); //화면에 시간 붙이기
+
+          const iconURL = `<img src="http://openweathermap.org/img/wn/${result.weather[0].icon}.png" alt="${result.weather[0].description}"> `;
+          $(".icon").html(iconURL);
+
+          console.log(result.main.temp); //기온 정보
+
+          $("#temp").append(result.main.temp); //화면에 기온 붙이기
+          $("#maxTemp").append(result.main.temp_max); //화면에 기온 붙이기
+          $("#minTemp").append(result.main.temp_min); //화면에 기온 붙이기
+        }
+      );
+    </script>
+  </body>
+</html>
