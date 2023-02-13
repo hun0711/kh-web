@@ -13,4 +13,3 @@ const cart = () => console.log("카트담기");
 goodSearch(() => {
   cart();
 });
-

@@ -8,4 +8,4 @@ const x = hap(2, 10, (result) => {
   console.log(result);
 });
 const y = x;
-console.log(y);
+console.log("y는" + y);

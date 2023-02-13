@@ -25,7 +25,9 @@ const shipping = () => console.log("배송");
 goodSearch(() => {
   cart(() => {
     account(() => {
-      shipping();
+      setTimeout(() => {
+        shipping();
+      }, 3000);
     });
   });
 });

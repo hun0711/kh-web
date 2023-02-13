@@ -16,5 +16,5 @@ const cart = () => console.log("카트담기");
 //goodSearch함수 호출될 때 콜백에서 cart함수를 호출하면
 //순서가 보장된다.
 goodSearch().then(() => {
-  cart()
+ cart()
 });

@@ -22,9 +22,7 @@ const account = () => console.log("결제하기");
 
 
 goodSearch()
-  .then(() => {
-    return cart();
-  })
+  .then(() => { return cart(); })
   .then(() => {
     return account();
   });
