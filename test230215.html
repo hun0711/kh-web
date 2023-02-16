@@ -1,62 +1,102 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>회원가입양식</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-</head>
-<body>
-  <fieldset style="width: 400px; height: 200">
-    <legend>회원가입 양식</legend>
-    <form name="회원가입 양식" action="insert.no" method="post">
-      <span>아이디</span>
-      <input id="mem_id" type="text" />
-     <button id="idCheck" type="button">중복확인</button>
-      <br />
-      <span>비밀번호</span>
-      <input id="mem_pw" type="password"/>
-      <br />
-      <span>비밀번호 확인</span>
-      <input id="pw_check" type="password" />
-      <br />
-      <span>지역</span>
-      서울 <input class="loc" type="radio" name="local" value="서울" />
-      부산 <input class="loc" type="radio" name="local"value="부산" />
-      대구<input class="loc" type="radio" name="local"value="대구" /><br />
-      <button id="initial " type="reset" >초기화</button>
-      <button id="join_button" type="button" >회원가입</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="f_test" method="get" action="UserServlet">
+      <fieldset style="width: 400px">
+        <legend>필수 입력 항목</legend>
+        <table>
+          <tr>
+            <td><label for="ID">ID</label></td>
+            <td>
+              <input id="ID" type="text" />
+              <!-- 
+              button - type:submit -> 화면이 전환된다
+              input[button] - type:button
+              a - href - 페이지 이동 or 함수호출(페이지 이동과 관련없다) - 화면전환이 안일어남
+              location.href=hashchange
+              아이디 중복확인은 버튼이 눌릴 때 마다 이벤트가 적용되어야 하므로
+              반드시 addEventListener 처리
+              
+              onclick으로 하면 마지막 한번만 처리되니까!!
+            -->
+              <input type="button" value="중복확인" id="check" />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="pwd">비밀번호</label></td>
+            <td><input id="pwd" type="password" /></td>
+          </tr>
+          <tr>
+            <td><label for="pwd2">비밀번호 확인</label></td>
+            <td><input id="pwd2" type="password" /></td>
+          </tr>
+          <tr>
+            <td><label>지역</label></td>
+            <td>
+              <input id="seoul" type="radio" name="loc" class="loc" />
+              <label for="seoul">서울</label>
+              <input id="busan" type="radio" name="loc" class="loc" />
+              <label for="busan">부산</label>
+              <input id="daegu" type="radio" name="loc" class="loc" />
+              <label for="daegu">대구</label>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <input type="button" value="초기화" />
+              <input type="button" id="btnJoin" value="회원가입" />
+            </td>
+          </tr>
+        </table>
+      </fieldset>
     </form>
     <script>
-      //아이디 중복확인
-      const mem_id = document.querySelector("#mem_id")
-      const btn = document.querySelector("#idCheck")
-      const reg = /^[a-z][a-z0-9!@#]{6,12}$/;
-      btn.addEventListener("click",()=>{
-      if(!reg.test(mem_id.value)){
-        mem_id.style.backgroundColor = "red";
-      }else{
-        mem_id.style.backgroundColor = "green";
-      }
-      })
-      //회원가입
-      const join_button = document.querySelector("#join_button")
-            join_button.addEventListener("click",()=>{
-        const loc= document.querySelectorAll(".loc")
-        let locationSelected = false;
-       loc.forEach((locSelect)=>{
-      if(locSelect.checked){
-        locationSelected = true
-        alert("가입성공!")
+      const check = document.querySelector("#check");
+      check.addEventListener("click", () => {
+        const regEx = /^[a-z][a-zA-Z0-9!@#]{5,11}$/;
+        const user = document.querySelector("#ID");
+        let str = user.value; //사용자가 텍스트필드에 입력한 아이디 읽기
+        let isFlag = false;
+        if (str.length !== null && str.length > 0) {
+          isFlag = regEx.test(str); //boolean타입 true,false 반환
         }
-      })
-        if(!locationSelected){
-       // locationSelected = false;
-        event.preventDefault()
-        alert("지역 선택해");
+        const color = isFlag ? "green" : "red";
+        if (isFlag) {
+          user.style.backgroundColor = "green";
+        } else {
+          user.style.backgroundColor = "red";
+        }
+        console.log(color);
+        console.log(isFlag);
+      }); // end of 중복확인
+      const locs = document.querySelectorAll(".loc");
+      console.log(locs);
+      //사용자가 선택한 지역 정보 담기
+      let user = "";
+      console.log("before==>" + user);
+      const locals = ["seoul", "pusan", "incheon"];
+      for (let i = 0; i < locs.length; i++) {
+        locs[i].addEventListener("click", () => {
+          locs[i].value = locals[i];
+          user = locs[i].value;
+          console.log("after===>" + user);
+        });
       }
-    })
-  </script>
-</body>
+      const btnJoin = document.querySelector("#btnJoin");
+      btnJoin.addEventListener("click", () => {
+        if (user === "" || user.length === 0) {
+          alert("지역을 선택하세요");
+          return; //if문의 return은 해당 함수를 탈출
+        }
+        console.log("지역을 선택하지 않으면 이 문자열은 안보임");
+      });
+    </script>
+  </body>
 </html>
